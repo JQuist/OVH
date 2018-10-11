@@ -21,27 +21,33 @@ if [ `whoami` = root ]; then
    $INSTALLPACKAGE p7zip-full
    $INSTALLPACKAGE dos2unix
    $INSTALLPACKAGE unzip
+   $INSTALLPACKAGE screen
    $INSTALLPACKAGE git
-   
+   $INSTALLPACKAGE build-essential libssl-dev
+   $INSTALLPACKAGE aircrack-ng
+   $INSTALLPACKAGE gnupg2
+      
    #Latest Nvidia 1080/1070driver as of 11-10-2018
    $INSTALLPACKAGE nvidia-390  
    $INSTALLPACKAGE ocl-icd-libopencl1
    $INSTALLPACKAGE nvidia-cuda-toolkit
    
-   #John Specific
-   sudo apt-get install build-essential libssl-dev
-   
-   $INSTALLPACKAGE gnupg2
    gpg2 --recv-keys "A70833229D040B4199CC00523C17DA8B8A16544F"
    curl -OO https://hashcat.net/files/hashcat-4.2.1.7z
 
-   #Uncompress PWD Fie
-   tar -I lbzip2 -xvf file.tar.bz2
+   #Uncompress PWD File
+   #tar -I lbzip2 -xvf file.tar.bz2
    
    #Get passwdfile
    curl -OO https://www.scrapmaker.com/data/wordlists/dictionaries/rockyou.txt
    
    #John = https://github.com/magnumripper/JohnTheRipper
+   git clone https://github.com/magnumripper/JohnTheRipper.git
+   cd /src/
+   ./configure && make clean && make -sj4
    
+   # Hashcat-Util -> Convert .CAP to .HashCap
+   git clone https://github.com/hashcat/hashcat-utils.git
+
    reboot
 #https://gist.github.com/koenrh/801766782fe65b279b436576d935d5d3
