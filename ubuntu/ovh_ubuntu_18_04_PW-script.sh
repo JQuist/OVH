@@ -20,6 +20,8 @@ if [ `whoami` = root ]; then
    #Install Stuff
    $INSTALLPACKAGE p7zip-full
    $INSTALLPACKAGE dos2unix
+   $INSTALLPACKAGE unzip
+   $INSTALLPACKAGE git
    
    #Latest Nvidia 1080/1070driver as of 11-10-2018
    $INSTALLPACKAGE nvidia-390  
@@ -38,6 +40,8 @@ if [ `whoami` = root ]; then
    
    #Get passwdfile
    curl -OO https://www.scrapmaker.com/data/wordlists/dictionaries/rockyou.txt
+   
+   #John = https://github.com/magnumripper/JohnTheRipper
    
    reboot
 #https://gist.github.com/koenrh/801766782fe65b279b436576d935d5d3
