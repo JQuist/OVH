@@ -33,7 +33,7 @@ if [ `whoami` = root ]; then
    $INSTALLPACKAGE nvidia-cuda-toolkit
    
    gpg2 --recv-keys "A70833229D040B4199CC00523C17DA8B8A16544F"
-   curl -OO https://hashcat.net/files/hashcat-4.2.1.7z
+   curl -OO https://hashcat.net/files/hashcat-5.0.0.7z
 
    #Uncompress PWD File
    #tar -I lbzip2 -xvf file.tar.bz2
