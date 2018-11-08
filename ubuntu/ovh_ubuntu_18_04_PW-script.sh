@@ -35,9 +35,14 @@ if [ `whoami` = root ]; then
    
    gpg2 --recv-keys "A70833229D040B4199CC00523C17DA8B8A16544F"
    curl -OO https://hashcat.net/files/hashcat-5.0.0.7z
+   #Watch out! Must use 'x' to extract: 
+   7z x hashcat-5.0.0.7z
 
    #Uncompress PWD File
    #tar -I lbzip2 -xvf file.tar.bz2
+   
+   #Add CPU/PGU Temp watch tool:
+   tb.d.
    
    #Get passwdfile
    curl -OO https://www.scrapmaker.com/data/wordlists/dictionaries/rockyou.txt
