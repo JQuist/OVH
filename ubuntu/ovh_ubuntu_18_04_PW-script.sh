@@ -26,6 +26,7 @@ if [ `whoami` = root ]; then
    $INSTALLPACKAGE build-essential libssl-dev
    $INSTALLPACKAGE aircrack-ng
    $INSTALLPACKAGE gnupg2
+   $INSTALLPACKAGE curl
       
    #Latest Nvidia 1080/1070driver as of 11-10-2018
    $INSTALLPACKAGE nvidia-390  
